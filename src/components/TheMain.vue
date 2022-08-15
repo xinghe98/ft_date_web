@@ -1,17 +1,13 @@
-<script lang="ts">
-import {RouterLink} from 'vue-router'
-</script>
-
 <template>
   <el-container>
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
       <el-menu router :default-openeds="['1']">
         <el-sub-menu index="1">
-          <template #title><i class="el-icon-setting"></i>操作</template>
+          <template #title><el-icon><Setting /></el-icon>操作</template>
           <el-menu-item-group>
-            <el-menu-item index="/list" class="el-icon-ice-tea">每日数据</el-menu-item>
-            <el-menu-item index="/create" class="el-icon-tickets">填写今日数据</el-menu-item>
-            <el-menu-item index="/userinfo" class="el-icon-s-custom">所有用户信息</el-menu-item>
+            <el-menu-item index="/list"><el-icon><SwitchFilled /></el-icon>每日数据</el-menu-item>
+            <el-menu-item index="/create"><el-icon><ToiletPaper /></el-icon>填写今日数据</el-menu-item>
+            <el-menu-item index="/userinfo"><el-icon><User /></el-icon>所有用户信息</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
       </el-menu>
@@ -26,10 +22,12 @@ import {RouterLink} from 'vue-router'
     </el-container>
   </el-container>
 </template>
-
+<script setup>
+import { Menu as SwitchFilled,Setting,ToiletPaper,User } from '@element-plus/icons-vue'
+</script>
 <style>
 .el-header {
-  background-color: #B3C0D1;
+  background-color: #409EFF;
   color: #333;
   line-height: 60px;
 }
