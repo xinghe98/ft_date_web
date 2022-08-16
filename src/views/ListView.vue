@@ -1,3 +1,6 @@
 <template>
-  <h1>list</h1>
+<AllinOne></AllinOne>
 </template>
+<script setup>
+import AllinOne from '@/components/AllinOne.vue'
+</script>
