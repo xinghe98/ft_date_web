@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <el-aside width="200px" style="background-color: rgba(200, 54, 54, 0.5))">
       <el-menu router :default-openeds="['1']">
         <el-sub-menu index="1">
           <template #title><el-icon><Setting /></el-icon>操作</template>
