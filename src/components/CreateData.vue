@@ -39,6 +39,8 @@
 import {ref} from "vue";
 import { ElMessage } from 'element-plus'
 import axios from "axios";
+import { useRouter } from "vue-router";
+const router = useRouter()
 const todayData =ref({
   scantimes: undefined,
   newUsers:undefined,
@@ -58,6 +60,7 @@ async function submit(todayData){
       message:res.data.msg,
       type:'success'
     })
+    router.push("/list")
   }catch (err) {
     console.log(err)
     const key = Object.keys(err.response.data.data)[0]
