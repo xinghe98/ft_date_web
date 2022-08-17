@@ -2,12 +2,12 @@
   <v-chart class="chart" :option="option" />
 </template>
 <script setup>
-import axios from 'axios';
 import {ref,onMounted} from 'vue'
+import { getDailyData } from '../api/api';
 const option = ref({})
 onMounted(async() => {
-    let res = await axios.get("/api/data")
-    const data = res.data.data
+    let res = await getDailyData()
+    const data = res.data
   option.value = {
     title:{
         text:"每日数据总览",

@@ -24,11 +24,11 @@
 </template>
 <script setup>
 import {onBeforeMount, ref} from "vue";
-import axios from "axios";
+import {getUsers} from "@/api/api";
 const tableData = ref()
 onBeforeMount(async ()=>{
-  const res =await axios.get('/api/newusers')
-  tableData.value = res.data.data.map((item)=>{
+  const res =await getUsers()
+  tableData.value = res.data.map((item)=>{
     item.created_time=item.created_time.slice(0,10)
     return item
   })

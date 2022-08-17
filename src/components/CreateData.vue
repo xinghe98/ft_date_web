@@ -38,7 +38,7 @@
 <script setup>
 import {ref} from "vue";
 import { ElMessage } from 'element-plus'
-import axios from "axios";
+import { addDailyData, createUser } from '../api/api';
 import { useRouter } from "vue-router";
 const router = useRouter()
 const todayData =ref({
@@ -55,15 +55,15 @@ const userinfos = ref({
 async function submit(todayData){
   try {
     console.log(todayData)
-    const res =await axios.post("/api/data",todayData)
+    const res =await addDailyData(todayData)
     ElMessage({
-      message:res.data.msg,
+      message:res.msg,
       type:'success'
     })
     router.push("/list")
   }catch (err) {
     console.log(err)
-    const key = Object.keys(err.response.data.data)[0]
+    const key = Object.keys(err.response.data)[0]
     const value = err.response.data.data[key]
     ElMessage({
       message:value[0].replace('scantimes','扫码次数').replace('newUsers','今日新增'),
@@ -74,13 +74,13 @@ async function submit(todayData){
 
 async function submituser(userinfos){
   try {
-    const res =await axios.post("/api/newusers",userinfos)
+    const res =await createUser(userinfos)
     ElMessage({
-      message:res.data.msg,
+      message:res.msg,
       type:'success'
     })
   }catch (err) {
-    const key = Object.keys(err.response.data.data)[0]
+    const key = Object.keys(err.response.data)[0]
     const value = err.response.data.data[key]
     ElMessage({
       message:value[0]
@@ -94,3 +94,8 @@ async function submituser(userinfos){
   }
 }
 </script>
+<style>
+.box-card{
+  margin-bottom:200px;
+}
+</style>
