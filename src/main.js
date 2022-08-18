@@ -10,7 +10,8 @@ import {
   } from 'echarts/renderers'
   import {
     BarChart,
-    LineChart
+    LineChart,
+    GaugeChart
   } from 'echarts/charts'
   import {
     LegendComponent,
@@ -28,7 +29,8 @@ import {
     LineChart,
     TitleComponent,
     ToolboxComponent,
-    TooltipComponent
+    TooltipComponent,
+    GaugeChart
   ]);
 
 const app = createApp(App)

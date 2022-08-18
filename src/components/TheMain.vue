@@ -6,6 +6,7 @@
           <template #title><el-icon><Setting /></el-icon>操作</template>
           <el-menu-item-group>
             <el-menu-item index="/list"><el-icon><SwitchFilled /></el-icon>每日数据</el-menu-item>
+            <el-menu-item index="/all"><el-icon><SwitchFilled /></el-icon>任务进度</el-menu-item>
             <el-menu-item index="/create"><el-icon><ToiletPaper /></el-icon>填写今日数据</el-menu-item>
             <el-menu-item index="/userinfo"><el-icon><User /></el-icon>所有用户信息</el-menu-item>
           </el-menu-item-group>
@@ -27,7 +28,7 @@ import { Menu as SwitchFilled,Setting,ToiletPaper,User } from '@element-plus/ico
 </script>
 <style>
 .el-header {
-  background-color: #409EFF;
+  background-color: #71ffc3;
   color: #333;
   line-height: 60px;
 }

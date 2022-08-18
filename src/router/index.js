@@ -13,6 +13,11 @@ const router = createRouter({
         component: () => import('../views/ListView.vue')
       },
         {
+          path: '/all',
+          name: 'all',
+          component: () => import('../views/AlltaskView.vue'),
+        },
+        {
           path: '/create',
           name: 'create',
           component: () => import('../views/CreateView.vue'),
