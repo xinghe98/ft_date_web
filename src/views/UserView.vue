@@ -2,5 +2,7 @@
   <UserInfo></UserInfo>
 </template>
 <script setup>
-import UserInfo from '@/components/UserInfo.vue'
+import { defineAsyncComponent } from 'vue';
+
+const UserInfo = defineAsyncComponent(() => import('@/components/UserInfo.vue'));
 </script>

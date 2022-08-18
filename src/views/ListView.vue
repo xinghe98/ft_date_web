@@ -9,8 +9,10 @@
   </el-row>
 </template>
 <script setup>
-import AllinOne from '@/components/AllinOne.vue'
-import OwnerVs from '../components/OwnerVs.vue';
+import { defineAsyncComponent } from 'vue';
+const AllinOne =defineAsyncComponent(()=>import('@/components/AllinOne.vue'));
+const OwnerVs =defineAsyncComponent(()=>import('../components/OwnerVs.vue'));
+
 </script>
 <style>
 .el-row {

@@ -1,5 +1,8 @@
 <script setup >
-import CreateData from '@/components/CreateData.vue'
+import { defineAsyncComponent } from 'vue';
+
+const CreateData = defineAsyncComponent(()=>import('@/components/CreateData.vue'));
+
 </script>
 
 <template>

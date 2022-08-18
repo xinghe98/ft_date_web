@@ -1,5 +1,6 @@
 <script setup>
-import TheMain from '@/components/TheMain.vue'
+import { defineAsyncComponent } from 'vue';
+const TheMain = defineAsyncComponent(()=>import('@/components/TheMain.vue'));
 </script>
 
 <template>

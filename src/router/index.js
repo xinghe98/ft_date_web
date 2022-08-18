@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component:()=>import('../views/HomeView.vue'),
       redirect: '/list',
       children:[{
         path: '/list',
@@ -17,12 +15,12 @@ const router = createRouter({
         {
           path: '/create',
           name: 'create',
-          component: () => import('../views/CreateView.vue')
+          component: () => import('../views/CreateView.vue'),
         },
         {
           path: '/userinfo',
           name: 'userinfo',
-          component: () => import('../views/UserView.vue')
+          component: () => import('../views/UserView.vue'),
         },
       ]
     },
